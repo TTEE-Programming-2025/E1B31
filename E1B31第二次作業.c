@@ -76,6 +76,62 @@ int main(){
         }
     } while (password != PASSWORD);
 	
-	
+	do {
+        clearScreen();
+        printf("a. Triangle\n");
+        printf("b. Multiplication Table\n");
+        printf("c. Exit\n");
+        printf("Your choice: ");
+        scanf(" %c", &choice);
+
+        switch (choice) {
+            case 'a':
+            case 'A': {
+                char ch;
+                printf("Enter a character (a~n): ");
+                scanf(" %c", &ch);
+                if (ch >= 'a' && ch <= 'n') {
+                    drawTriangle(ch);
+                } else {
+                    printf("Invalid character.\n");
+                }
+                system("pause");
+                break;
+            }
+
+            case 'b':
+            case 'B': {
+                int n;
+                printf("Enter a number (1~9): ");
+                scanf("%d", &n);
+                if (n >= 1 && n <= 9) {
+                    multiplicationTable(n);
+                } else {
+                    printf("Number out of range.\n");
+                }
+                system("pause");
+                break;
+            }
+
+            case 'c':
+            case 'C': {
+                printf("Continue? (y/n): ");
+                scanf(" %c", &cont);
+                if (cont == 'y' || cont == 'Y') {
+                    break;
+                } else {
+                    printf("Goodbye.\n");
+                    return 0;
+                }
+            }
+
+            default:
+                printf("Invalid selection.\n");
+                system("pause");
+                break;
+        }
+
+    } while (1);
+    
 	return 0;
 } 
