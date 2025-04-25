@@ -7,7 +7,7 @@ int clearScreen() {
     system("cls");  // 清除畫面（只適用於 Windows）
     return 0;
 }
-int drawTriangle(char ch) {
+int triangle(char ch) {
     int height = ch - 'a' + 1;
     int i = 1;
     while (i <= height) {
@@ -22,7 +22,7 @@ int drawTriangle(char ch) {
     return 0;
 }
 
-int multiplicationTable(int n) {
+int mul(int n) {
     int i = 1;
     while (i <= n) {
         int j = 1;
@@ -57,6 +57,24 @@ int main(){
 	printf("E1B31\n");
 	printf("E1B31\n");
 	printf("E1B31\n");
+	int password, attempts = 0;
+    char choice, cont;
+    
+    do {
+        clearScreen();
+        printf("Enter 4-digit password: ");
+        scanf("%d", &password);
+        attempts++;
+
+        if (password != PASSWORD) {
+            printf("Wrong password!\n");
+            if (attempts >= 3) {
+                printf("Too many attempts. Exiting.\n");
+                return 0;
+            }
+            system("pause");
+        }
+    } while (password != PASSWORD);
 	
 	
 	return 0;
