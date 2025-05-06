@@ -4,7 +4,7 @@
 #define PASSWORD 2025
 
 int clearScreen() {
-    system("cls");  // �M���e���]�u�A�Ω� Windows�^
+    system("cls");  // ²M°£µe­±¡]¥u¾A¥Î©ó Windows¡^
     return 0;
 }
 int triangle(char ch) {
@@ -79,3 +79,7 @@ int main(){
 	
 	return 0;
 } 
+//心得:這次寫程式讓我更熟悉 while 迴圈的用法，
+//特別是在畫三角形時學到怎麼用字元來控制輸出。
+//雖然一開始有錯誤，但修正後更了解程式的邏輯。
+//透過這次練習，我覺得自己對 C 語言又更熟一點了。
