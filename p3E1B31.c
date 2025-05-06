@@ -6,7 +6,26 @@ int main() {
     char seats[9][9];
     int i, j;
     int password, tries = 0;
-
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
+printf("E1B31\n");
     // 密碼驗證（最多3次）
     while (tries < 3) {
         printf("請輸入4位數密碼：");
