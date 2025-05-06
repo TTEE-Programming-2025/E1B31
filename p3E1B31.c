@@ -26,23 +26,23 @@ printf("E1B31\n");
 printf("E1B31\n");
 printf("E1B31\n");
 printf("E1B31\n");
-    // ±K½XÅçÃÒ¡]³Ì¦h3¦¸¡^
+    // å¯†ç¢¼é©—è­‰ï¼ˆæœ€å¤š3æ¬¡ï¼‰
     while (tries < 3) {
-        printf("½Ğ¿é¤J4¦ì¼Æ±K½X¡G");
+        printf("è«‹è¼¸å…¥4ä½æ•¸å¯†ç¢¼ï¼š");
         scanf("%d", &password);
         if (password == 2025) break;
         else {
-            printf("±K½X¿ù»~¡A½Ğ­«¸Õ¡C\n");
+            printf("å¯†ç¢¼éŒ¯èª¤ï¼Œè«‹é‡è©¦ã€‚\n");
             tries++;
         }
     }
     if (tries == 3) {
-        printf("¿é¤J¿ù»~¤T¦¸¡Aµ²§ôµ{¦¡¡C\n");
+        printf("è¼¸å…¥éŒ¯èª¤ä¸‰æ¬¡ï¼ŒçµæŸç¨‹å¼ã€‚\n");
         return 0;
     }
-    srand(time(NULL));  // ªì©l¤Æ¶Ã¼Æ
+    srand(time(NULL));  // åˆå§‹åŒ–äº‚æ•¸
 
-    // ¥D¿ï³æ°j°é
+    // ä¸»é¸å–®è¿´åœˆ
     while (1) {
         char choice;
         printf("---------[Booking System]----------\n");
@@ -50,16 +50,16 @@ printf("E1B31\n");
         printf("b. Arrange for you\n");
         printf("c. Choose by yourself\n");
         printf("d. Exit\n");
-        printf("½Ğ¿é¤J¿ï¶µ (a/b/c/d): ");
+        printf("è«‹è¼¸å…¥é¸é … (a/b/c/d): ");
         scanf(" %c", &choice);
 
         if (choice == 'a') {
-            // ªì©l¤Æ®y¦ì°}¦C
+            // åˆå§‹åŒ–åº§ä½é™£åˆ—
             for (i = 0; i < 9; i++)
                 for (j = 0; j < 9; j++)
                     seats[i][j] = '-';
 
-            // ÀH¾÷¹w­q10­Ó®y¦ì¡]¥H * ªí¥Ü¡^
+            // éš¨æ©Ÿé è¨‚10å€‹åº§ä½ï¼ˆä»¥ * è¡¨ç¤ºï¼‰
             int count = 0;
             while (count < 10) {
                 int r = rand() % 9;
@@ -69,7 +69,7 @@ printf("E1B31\n");
                     count++;
                 }
          }
-         // Åã¥Ü®y¦ì¹Ï
+         // é¡¯ç¤ºåº§ä½åœ–
             printf("  123456789\n");
             for (i = 8; i >= 0; i--) {
                 printf("%d ", i + 1);
@@ -79,5 +79,14 @@ printf("E1B31\n");
                 printf("\n");
             }
         }
+        else if (choice == 'b') {
+            int need, found = 0;
+            printf("ä½ éœ€è¦å¹¾å€‹åº§ä½ï¼Ÿ(1-4): ");
+            scanf("%d", &need);
+
+            if (need < 1 || need > 4) {
+                printf("è¼¸å…¥éŒ¯èª¤ã€‚\n");
+                continue;
+            }
                 return 0;
             }}
