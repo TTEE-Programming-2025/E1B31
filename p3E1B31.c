@@ -121,5 +121,33 @@ printf("E1B31\n");
                 printf("無法安排連續座位。\n");
             }
         }
+        else if (choice == 'c') {
+            int row, col;
+            printf("請輸入座位（格式：列-行，例如 2-5）：");
+            scanf("%d-%d", &col, &row);
+            row--; col--;
+
+            if (row < 0 || row >= 9 || col < 0 || col >= 9) {
+                printf("輸入超出範圍。\n");
+                continue;
+            }
+
+            if (seats[row][col] == '-') {
+                seats[row][col] = '@';
+                printf("座位已成功預訂：\n");
+            } else {
+                printf("該座位已被預訂。\n");
+            }
+
+            // 顯示最新座位圖
+            printf("  123456789\n");
+            for (i = 8; i >= 0; i--) {
+                printf("%d ", i + 1);
+                for (j = 0; j < 9; j++) {
+                    printf("%c", seats[i][j]);
+                }
+                printf("\n");
+            }
+        }
                 return 0;
             }}
