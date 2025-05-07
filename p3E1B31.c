@@ -88,5 +88,38 @@ printf("E1B31\n");
                 printf("輸入錯誤。\n");
                 continue;
             }
+            for (i = 0; i < 9 && !found; i++) {
+                for (j = 0; j <= 9 - need; j++) {
+                    int ok = 1;
+                    for (int k = 0; k < need; k++) {
+                        if (seats[i][j + k] != '-') {
+                            ok = 0;
+                            break;
+                        }
+                    }
+                    if (ok) {
+                        for (int k = 0; k < need; k++) {
+                            seats[i][j + k] = '@';
+                        }
+                        found = 1;
+                        break;
+                    }
+                }
+            }
+
+            if (found) {
+                printf("系統已自動安排座位如下：\n");
+                printf("  123456789\n");
+                for (i = 8; i >= 0; i--) {
+                    printf("%d ", i + 1);
+                    for (j = 0; j < 9; j++) {
+                        printf("%c", seats[i][j]);
+                    }
+                    printf("\n");
+                }
+            } else {
+                printf("無法安排連續座位。\n");
+            }
+        }
                 return 0;
             }}
