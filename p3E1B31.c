@@ -149,5 +149,27 @@ printf("E1B31\n");
                 printf("\n");
             }
         }
+        else if (choice == 'd') {
+            char cont;
+            printf("Continue? (y/n): ");
+            scanf(" %c", &cont);
+            if (cont == 'n') {
+                printf("程式結束。\n");
+                break;
+            }
+        }
+
+        else {
+            printf("輸入無效選項。\n");
+        }
+    }
                 return 0;
-            }}
+            }
+
+
+//我也學會如何處理使用者輸入及格式排版，例如在座位圖顯示上，
+//需要適當加入空格與對齊，才能使圖形結構清晰。
+//透過多次測試與修改，我逐步完善了程式
+
+
+
