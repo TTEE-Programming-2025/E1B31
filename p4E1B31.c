@@ -134,7 +134,9 @@ void exitSystem() {
         exit(0);
     }
 }
-int main(){
+
+int main() {
+        printf("E1B31\n");
 	printf("E1B31\n");
 	printf("E1B31\n");
 	printf("E1B31\n");
@@ -154,8 +156,20 @@ int main(){
 	printf("E1B31\n");
 	printf("E1B31\n");
 	printf("E1B31\n");
-	printf("E1B31\n");
-	
-	system("pause");
-	return 0;
-} 
+    welcomeScreen();
+    char choice;
+    while (1) {
+        clearScreen();
+        showMenu();
+        scanf(" %c", &choice);
+        switch (choice) {
+            case 'a': enterGrades(); break;
+            case 'b': displayGrades(); break;
+            case 'c': searchStudent(); break;
+            case 'd': showRanking(); break;
+            case 'e': exitSystem(); break;
+            default: printf("無效選項，請重新輸入。\n"); system("pause");
+        }
+    }
+    return 0;
+}
