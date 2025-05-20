@@ -92,7 +92,38 @@ void displayGrades() {
     system("pause");
 }
 
+void searchStudent() {
+    clearScreen();
+    char query[20];
+    printf("請輸入欲查詢的學號: ");
+    scanf("%s", query);
+    for (int i = 0; i < student_count; i++) {
+        if (strcmp(students[i].id, query) == 0) {
+            printf("姓名: %s\t學號: %s\t平均: %.2f\n", students[i].name, students[i].id, students[i].average);
+            return;
+        }
+    }
+    printf("查無此學號學生。\n");
+    system("pause");
+}
 
+int compare(const void *a, const void *b) {
+    Student *s1 = (Student *)a;
+    Student *s2 = (Student *)b;
+    return s1->average > s2->average ? -1 : 1;
+}
+
+void showRanking() {
+    clearScreen();
+    Student sorted[MAX_STUDENTS];
+    memcpy(sorted, students, sizeof(students));
+    qsort(sorted, student_count, sizeof(Student), compare);
+    printf("成績排名（高至低）:\n");
+    for (int i = 0; i < student_count; i++) {
+        printf("%d. %s (%.2f)\n", i + 1, sorted[i].name, sorted[i].average);
+    }
+    system("pause");
+}
 int main(){
 	printf("E1B31\n");
 	printf("E1B31\n");
