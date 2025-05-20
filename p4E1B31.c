@@ -124,6 +124,16 @@ void showRanking() {
     }
     system("pause");
 }
+
+void exitSystem() {
+    char confirm;
+    printf("確定要離開嗎？(y/n): ");
+    scanf(" %c", &confirm);
+    if (confirm == 'y' || confirm == 'Y') {
+        printf("感謝使用，再見！\n");
+        exit(0);
+    }
+}
 int main(){
 	printf("E1B31\n");
 	printf("E1B31\n");
